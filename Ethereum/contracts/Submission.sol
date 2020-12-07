@@ -64,5 +64,9 @@ contract Submission{
     function display() public view returns(Submit[]){
         return listofsubmissions;
     }
+
+    function getCount() public view returns(uint){
+        return listofsubmissions.length;
+    }
     
 }

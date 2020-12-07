@@ -1,5 +1,5 @@
 import web3 from './web3';
-import Submission from './build/Submisison.json';
+import Submission from './build/Submission.json';
 
 
 export default (address) => {
