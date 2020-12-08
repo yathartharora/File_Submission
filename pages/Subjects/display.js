@@ -15,7 +15,7 @@ class Submit extends Component{
         const requestCount = await campaign.methods.getCount().call();
         const requests = await Promise.all(
             Array(parseInt(requestCount)).fill().map((element,index) => {
-                return campaign.methods.candidates(index).call()
+                return campaign.methods.listofsubmissions(index).call()
             }) 
         );
 
@@ -37,7 +37,7 @@ class Submit extends Component{
         const {Header, Row, HeaderCell, Body} = Table;
         return(
             <Layout>
-                <Link route='/Subjects/upload'>
+                <Link route={`/Subjects/${this.props.address}/upload`}>
                 <Button 
                 content = 'Upload'
                 icon = "add"
@@ -45,7 +45,7 @@ class Submit extends Component{
                 primary
                 />
                 </Link>
-                <h3>Voting Status: </h3>
+                <h3>Submission Status: </h3>
                 <Table celled>
                     <Header>
                         <Row>

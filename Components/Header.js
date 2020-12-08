@@ -7,7 +7,7 @@ export default () => {
         <Menu style={{marginTop: '10px'}}>
             <Link route="/">
                 <a className="item">
-                   GAMBLING
+                   Submission
                 </a>
             </Link>
 

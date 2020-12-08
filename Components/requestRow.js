@@ -10,7 +10,7 @@ class RequestRow extends Component{
                 <Cell>{this.props.request.firstname} </Cell>
                 <Cell>{this.props.request.lastname}</Cell>
                 <Cell>{this.props.request.scholar_number}</Cell>
-                <Cell>{this.props.request.ipfshash}</Cell>
+                <Cell><a href={`https://ipfs.io/ipfs/${this.props.request.ipfshash}`}>Click Here</a></Cell>
             </Row>
             
         );
