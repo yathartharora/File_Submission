@@ -34,6 +34,7 @@ contract Submission{
         string lastname;
         string scholar_number;
         string ipfshash;
+        string time;
     }
     
     address public manager;
@@ -46,7 +47,7 @@ contract Submission{
         manager= sender;
     }
     
-    function submit(string first_name, string last_name, string scholar_number, string ipfshash) public {
+    function submit(string first_name, string last_name, string scholar_number, string ipfshash, string time) public {
         
         Submit storage newSubmission = submission[msg.sender];
         
@@ -54,6 +55,7 @@ contract Submission{
         newSubmission.lastname = last_name;
         newSubmission.scholar_number = scholar_number;
         newSubmission.ipfshash = ipfshash;
+        newSubmission.time = time;
         
         require(!submitted[msg.sender]);
         submitted[msg.sender] = true;
