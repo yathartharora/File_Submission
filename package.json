@@ -10,7 +10,7 @@
   },
   "author": "",
   "license": "ISC",
-  "description": "",
+  "description": "File Submission",
   "dependencies": {
     "fs-extra": "^9.0.1",
     "ganache-cli": "^6.12.1",
