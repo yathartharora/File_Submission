@@ -25,7 +25,8 @@ class Upload extends Component{
             scholarnumber: '',
             buffer: null,
             ipfsHash: '',
-            active: true
+            active: true,
+            curtime : new Date().toLocaleString()
         }
         this.captureFile = this.captureFile.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
@@ -40,7 +41,7 @@ class Upload extends Component{
         try {
             const accounts = await web3.eth.getAccounts();
             console.log(accounts[0]);
-            await upload.methods.submit(this.state.firstname, this.state.lastname, this.state.scholarnumber, this.state.ipfsHash).send({
+            await upload.methods.submit(this.state.firstname, this.state.lastname, this.state.scholarnumber, this.state.ipfsHash, this.state.curtime).send({
                 from: accounts[0]
             });
         } catch (error) {
@@ -103,9 +104,15 @@ class Upload extends Component{
                             onChange = {this.captureFile}
                         />
                     </Form.Field>
-                    <Button primary loading={this.state.loading} disabled={this.state.active}>Submit</Button>  
+                    <Button secondary loading={this.state.loading} disabled={this.state.active}>Submit</Button> 
+                    <Button primary onClick={this.generate}>Generate</Button> 
                 </Form>
-                <Button primary onClick={this.generate}>Generate</Button>
+
+                <br></br>
+                <div>
+                    Generated Hash: {this.state.ipfsHash}
+                </div>
+                
             </Layout>
         )
     }

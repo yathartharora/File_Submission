@@ -49,10 +49,13 @@ class Submit extends Component{
                 <Table celled>
                     <Header>
                         <Row>
+                            <HeaderCell>Sno.</HeaderCell>
                             <HeaderCell>First Name</HeaderCell>
                             <HeaderCell>Last Name</HeaderCell>
                             <HeaderCell>Scholar Number</HeaderCell>
                             <HeaderCell>File Link</HeaderCell>
+                            <HeaderCell>Submission Time</HeaderCell>
+
                         </Row>
                     </Header>
 
