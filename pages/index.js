@@ -16,13 +16,13 @@ class Submission extends Component{
     renderSubjects() {
         const item = this.props.subjects.map(address=> {
             return{
-                header: (`${address.sender}`),
+                header: address.name,
                 description: (
                     <Link route={`/Subjects/${address.sender}`}>
                         <a>Submit</a>
                     </Link>
                 ),
-                meta: address.name,
+                meta: (`${address.sender}`),
                 fluid: true
             };
         });
